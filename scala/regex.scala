@@ -26,7 +26,7 @@ case class Repeat(r: Regex) extends Regex {
       (newSeen -- seen).foldLeft(newSeen)((res, cur) =>
         res ++ loop(cur, res))
     }
-    loop(str, Set()).toSeq
+    (loop(str, Set()) + str).toSeq
   }
 }
     
