@@ -2,12 +2,6 @@
 // l in Letter
 // r in Regex ::= . | l | r* | r_1 r_2
 
-sealed trait Regex
-case object AnyChar extends Regex
-case class Letter(c: Char) extends Regex
-case class Repeat(r: Regex) extends Regex
-case class RegexAnd(r1: Regex, r2: Regex) extends Regex
-
 // We could (and probably should) use standard parser combinators here,
 // but I want to play with my own for now
 
